@@ -81,7 +81,7 @@ def common_options(function):
     function = click.option(
         "--tokenizer",
         "-tok",
-        type=click.Choice(["13a", "intl", "moses", "penn", "none"]),
+        type=click.Choice(["13a", "intl", "moses", "penn", "none", "ja-mecab"]),
         default="13a",
         help="Tokenization method to use.",
     )(function)

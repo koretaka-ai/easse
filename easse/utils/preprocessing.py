@@ -8,6 +8,7 @@ _TOKENIZERS = {
     "none": "tokenizer_base.BaseTokenizer",
     "13a": "tokenizer_13a.Tokenizer13a",
     "intl": "tokenizer_intl.TokenizerV14International",
+    "ja-mecab": "tokenizer_ja_mecab.TokenizerJaMecab",
 }
 
 
@@ -21,7 +22,7 @@ def normalize(sentence: str, lowercase: bool = True, tokenizer: str = "13a", ret
     if lowercase:
         sentence = sentence.lower()
 
-    if tokenizer in ["13a", "intl", "none"]:
+    if tokenizer in ["13a", "intl", "none", "ja-mecab"]:
         tokenizer_obj = _get_tokenizer(name=tokenizer)()
         normalized_sent = tokenizer_obj(sentence)
     elif tokenizer == "moses":
